@@ -1,3 +1,4 @@
+#in any deck of cards each card has a rank and suit
 class Card
   attr_accessor :rank, :suit
   def initialize(rank, suit)
@@ -9,6 +10,7 @@ class Card
   end
 end
 
+#
 class Deck
   attr_accessor :cards
   def initialize

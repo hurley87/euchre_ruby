@@ -4,12 +4,13 @@ require_relative  'player'
 
 class Game
   attr_accessor :player1_score, :player2_score, :round, :player1_name, :player2_name
-  def initialize
+  def initialize(game_score_limit)
     @player1_score = 0
     @player2_score = 0
     @player1_name = player1_name
     @player2_name = player2_name
     @round = 1
+    @game_score_limit = game_score_limit
   end
    def deal_new
     #ask for players names
@@ -21,12 +22,12 @@ class Game
   end
 end
 
-    new_game = Game.new
+    new_game = Game.new(20)
     p1_score = new_game.player1_score
     p2_score = new_game.player2_score
     new_game.deal_new
 
-    until p1_score > 20 || p2_score > 20 
+    until p1_score > game_score_limit.to_i || p2_score > game_score_limit.to_i
       new_Round = Round.new
       new_Round.player1.name = new_game.player1_name
       new_Round.player2.name = new_game.player2_name
