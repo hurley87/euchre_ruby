@@ -19,13 +19,12 @@ class Game
     puts "Enter player 2 name: "
     name2 = gets.chomp 
     player_2 = Player.new(name2)
-    new_round = Round.new(player_1, player_2)
-
-    p1 = new_round.player1
-    p2 = new_round.player2
 
     until @player1_score > @game_score_limit.to_i || @player2_score > @game_score_limit.to_i
-      
+      new_round = Round.new(player_1, player_2)
+
+       p1 = new_round.player1
+       p2 = new_round.player2
       if @round % 2 == 0 
         new_round.player2.deal = true
         new_round.player1.deal = false
