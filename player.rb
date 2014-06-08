@@ -1,6 +1,6 @@
 class Player
-  attr_accessor :make, :hand, :deal, :name, :score
-  def initialize(name) 
+  attr_accessor :make, :hand, :deal, :score, :name
+  def initialize(name)
     @hand = hand
     @make = false
     @deal = false

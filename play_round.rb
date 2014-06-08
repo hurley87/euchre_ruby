@@ -1,8 +1,8 @@
 class Round
   attr_accessor :player1, :player2
-  def initialize
-    @player1 = Player.new
-    @player2 = Player.new
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
     @deal = Deal.new
     @trump = ""
     @player1.hand = @deal.p1_hand
@@ -15,8 +15,8 @@ class Round
       puts p1.name + ": Do you want to order or pass(o or p)"
       decision = gets.chomp
       if decision == 'o'
-        p1.order(@deal.trump_card)
-        @trump = @deal.trump_card.suit
+        p1.order(@deal.decision_card)
+        @trump = @deal.decision_card.suit
         p1.make = true
       else
         puts p2.name + ": Either press p to pass or choose a suit."
